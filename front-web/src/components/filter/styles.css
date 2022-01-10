@@ -3,8 +3,43 @@
   height: 130px;
   left: 0px;
   top: 0px;
-  background: var(--primary-color);
-  border-radius: 5px;
   border: 1px solid #bbb;
-  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+
+.filter-container{
+  left: 5%;
+  right: 5%;
+  top: 30.77%;
+  bottom: 30.77%;
+  border: 1px solid #8D8D8D;
+  box-sizing: border-box;
+  width: 270px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+
+}
+
+
+
+.text-filter{
+  width: 200px;
+  border: none;
+
+}
+
+.xicon-filter{
+  margin-left: 10px;
+
+}
+
+.select-filter{
+  margin-left: 15x;
+  border: none;
+  color: var(--grey-light-color);
 }
