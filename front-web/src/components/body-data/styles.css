@@ -43,3 +43,20 @@
   color: var(--grey-light-color);
   margin-left: 15px;
 }
+
+
+.pie-chart{
+  width: 300px; /*Para que o tamanho possa ajustar o tamanho ao invés de usar o tamanho fixo*/
+  padding-top: 35px;
+  display: flex;
+  justify-content: center;
+  /*border: 1px solid #bbb;*/
+
+}
+
+
+.apexcharts-legend.apexcharts-align-center {
+  flex-direction: column;
+  align-items: center;
+
+}

@@ -10,7 +10,7 @@ function App() {
       <div className="app-container">
         <Filter />
       </div>
-      <BodyData />
+      <BodyData name="Lojas" labels={['Lavras', 'Perdoes', 'Varginha']} series={[40, 30, 30]} />
     </>
   );
 }
