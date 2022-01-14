@@ -1,7 +1,7 @@
 import BodyData from 'components/body-data';
 import Filter from 'components/filter';
 import Header from 'components/header';
-import { buildSalesByGenderChart } from 'helpers';
+import { buildSalesByGenderChart, sumSalesByGender } from 'helpers';
 import { useEffect, useMemo, useState } from 'react';
 import { FilterData, PieChartConfig, SalesByGender } from 'types';
 import { buildFilterParams, makeRequest } from 'utils/request';
@@ -13,6 +13,8 @@ function App() {
 
   const [salesByGender, setSalesByGender] = useState<PieChartConfig>();
 
+  const [totalSum, setTotalSum] = useState(0);
+
   const params = useMemo(() => buildFilterParams(filterData), [filterData]);
 
   useEffect(() => {
@@ -22,6 +24,9 @@ function App() {
         const newSalesByGender = buildSalesByGenderChart(response.data);
         console.log(response.data);
         setSalesByGender(newSalesByGender);
+        const newtotalsum = sumSalesByGender(response.data);
+        setTotalSum(newtotalsum);
+        console.log('Total:' + totalSum);
       })
       .catch(() => {
         console.error('Erro na comunicação com API SalesByGender');
@@ -40,7 +45,12 @@ function App() {
       <div className="app-container">
         <Filter />
       </div>
-      <BodyData name="Genero" labels={salesByGender?.labels} series={salesByGender?.series} />
+      <BodyData
+        totalSum={totalSum}
+        name="Genero"
+        labels={salesByGender?.labels}
+        series={salesByGender?.series}
+      />
     </>
   );
 }

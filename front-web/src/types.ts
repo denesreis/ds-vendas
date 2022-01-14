@@ -14,8 +14,8 @@ export type SalesByGender = {
 };
 
 export type PieChartConfig = {
-  labels?: string[];
-  series?: number[];
+  labels: string[];
+  series: number[];
 };
 
 export type FilterData = {
